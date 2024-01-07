@@ -9,7 +9,7 @@ type LetterSpacingsThemeKeys = keyof typeof themes.letterSpacings
 type LineHeightsThemeKeys = keyof typeof themes.lineHeights
 
 export type Space = SpaceThemeKeys | (string & {})
-export type Colors = ColorsThemeKeys | (string & {})
+export type Color = ColorsThemeKeys | (string & {})
 export type FontSizes = FontSizesThemeKeys | (string & {})
 export type LetterSpacings = LetterSpacingsThemeKeys | (string & {})
 export type LineHeights = LineHeightsThemeKeys | (string & {})
