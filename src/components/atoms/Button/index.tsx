@@ -3,20 +3,21 @@ import {Responsive} from 'types'
 import {
     toPropValue,
     Color,
-    FontSizes,
-    LetterSpacings,
-    LineHeights,
+    FontSize,
+    LetterSpacing,
+    LineHeight,
     Space,
 } from 'utils/style'
+
 
 export type ButtonVariant = 'primary' | 'secondary' | 'danger'
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
     variant?: ButtonVariant
-    fontSize?: Responsive<FontSizes>
+    fontSize?: Responsive<FontSize>
     fontWeight?: Responsive<string>
-    letterSpacing?: Responsive<LetterSpacings>
-    lineHeight?: Responsive<LineHeights>
+    letterSpacing?: Responsive<LetterSpacing>
+    lineHeight?: Responsive<LineHeight>
     textAlign?: Responsive<string>
     color?: Responsive<Color>
     backgroundColor?: Responsive<Color>
