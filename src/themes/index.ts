@@ -4,7 +4,7 @@ import letterSpacings from './letterSpacings'
 import lineHeights from './lineHeights'
 import space from './space'
 
-export const themes ={
+export const theme ={
     space,
     lineHeights,
     letterSpacings,
