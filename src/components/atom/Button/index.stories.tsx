@@ -62,14 +62,14 @@ export const Primary = {
 
 export const Secondary = {
     args: {
-        variant: 'Secondary',
+        variant: 'secondary',
         children: 'Secondary Button'
     }
 }
 
 export const Disabled = {
     args: {
-        variant: 'Disabled',
+        disabled: true,
         children: 'Disabled Button'
     }
 }
