@@ -1,8 +1,6 @@
 import React from 'react'
-import {Preview} from '@storybook/react'
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
 import {themes} from '../src/themes'
-import * as NexImage from 'next/image'
 
 export const parameters = {
   actions: {argTypeRegex: '^on[A-Z].*'},
@@ -40,7 +38,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 `
 
-const decorator = [
+export const decorators = [
   (Story) => (
     <ThemeProvider theme={themes}>
       <GlobalStyle/>
@@ -48,12 +46,3 @@ const decorator = [
     </ThemeProvider>
   )
 ]
-const OriginalNextImage = NexImage.default
-Object.defineProperty(NextImage, 'default', {
-  configurable: true,
-  value: (props) => typeof props.src === 'string' ? (
-    <OriginalNextImage {...props} unoptimized blurDataURL={props.src}/>
-  ) : (
-    <OriginalNextImage {...props} unoptimized/>
-  )
-})
