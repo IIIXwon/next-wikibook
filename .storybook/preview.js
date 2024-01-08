@@ -1,30 +1,17 @@
-import { addDecorator } from '@storybook/react'
+import React from 'react'
+import {Preview} from '@storybook/react'
 import {createGlobalStyle, ThemeProvider} from 'styled-components'
-import {theme} from '../src/themes'
+import {themes} from '../src/themes'
 import * as NexImage from 'next/image'
 
-// import type {Preview} from "@storybook/react";
-//
-// const preview: Preview = {
-//     parameters: {
-//         actions: {argTypesRegex: "^on[A-Z].*"},
-//         controls: {
-//             matchers: {
-//                 color: /(background|colors)$/i,
-//                 date: /Date$/i,
-//             },
-//         },
-//     },
-// };
-
 export const parameters = {
-    actions: {argTypeRegex: '^on[A-Z].*'},
-    controls: {
-        matchers: {
-            color: /(background|color)$/i,
-            date: /Date$/,
-        }
+  actions: {argTypeRegex: '^on[A-Z].*'},
+  controls: {
+    matchers: {
+      color: /(background|color)$/i,
+      date: /Date$/,
     }
+  }
 }
 
 export const GlobalStyle = createGlobalStyle`
@@ -52,19 +39,21 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
     }
 `
-addDecorator((story) => {
-    <ThemeProvider theme={theme}>
-        <GlobalStyle/>
-        {story()}
+
+const decorator = [
+  (Story) => (
+    <ThemeProvider theme={themes}>
+      <GlobalStyle/>
+      <Story/>
     </ThemeProvider>
-})
+  )
+]
 const OriginalNextImage = NexImage.default
 Object.defineProperty(NextImage, 'default', {
-    configurable: true,
-    value: (props) => typeof props.src === 'string' ? (
-      <OriginalNextImage {...props} unoptimized blurDataURL={props.src}/>
-    ) : (
-      <OriginalNextImage {...props} unoptimized/>
-    )
+  configurable: true,
+  value: (props) => typeof props.src === 'string' ? (
+    <OriginalNextImage {...props} unoptimized blurDataURL={props.src}/>
+  ) : (
+    <OriginalNextImage {...props} unoptimized/>
+  )
 })
-// export default preview;
