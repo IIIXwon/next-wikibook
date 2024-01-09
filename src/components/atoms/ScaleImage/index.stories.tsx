@@ -35,7 +35,7 @@ export default {
                 type: {summary: 'number'}
             },
         },
-        containerHidth: {
+        containerHeight: {
             control: {type: 'number'},
             defaultValue: 320,
             description: '세로폭',
