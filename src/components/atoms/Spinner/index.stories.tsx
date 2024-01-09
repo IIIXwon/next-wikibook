@@ -1,6 +1,5 @@
 import {styled} from 'styled-components'
 import Spinner from './index'
-import zIndex from "@mui/material/styles/zIndex";
 
 export default {
     title: 'Atoms/Spinner',
