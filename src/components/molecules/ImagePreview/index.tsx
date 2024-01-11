@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import {styled} from 'styled-components'
 import {
     CloseIcon
@@ -25,7 +24,7 @@ interface ImagePreviewProps {
     src?: string
     alt?: string
     height?: string
-    width?: string
+    width?: string | number
     onRemove?: (src: string) => void
 }
 
@@ -45,7 +44,7 @@ const ImagePreview = ({
 
     return (
         <ImagePreviewContainer height={height} width={width}>
-            <Image src={src} alt={alt} height={height} width={width}/>
+            <img src={src} alt={alt} height={height} width={width}/>
             <CloseBox
                 alignItems="center"
                 justifyContent="center"
