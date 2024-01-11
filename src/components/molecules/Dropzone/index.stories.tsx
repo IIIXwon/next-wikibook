@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, {useRef, useState, useCallback, useEffect} from 'react'
+import React, {useState, useEffect} from 'react'
 import Dropzone from './index'
 import Button from 'components/atoms/Button'
 import Box from 'components/layout/Box'
