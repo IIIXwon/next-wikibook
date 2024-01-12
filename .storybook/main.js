@@ -13,7 +13,7 @@ module.exports = {
     '@storybook/addon-postcss',
   ],
 
-  staticDirs: ['./public'],
+  staticDirs: ['public'],
 
   babel: async options => ({
     ...options,
